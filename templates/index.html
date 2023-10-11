@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bengaluru House Price Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: #3498db;
+            color: #fff;
+            padding: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2385db;
+        }
+
+        h3 {
+            margin-top: 20px;
+            color: #013460;
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Bengaluru House Price Predictor</h1>
+    
+    <form method="post" action="/predict">
+        <label>Area Type</label>
+        <input type="text" name="area_type">
+        <label>Bedrooms</label>
+        <input type="text" name="bedrooms">
+        <label>Total Sqft</label>
+        <input type="text" name="total_sqft">
+        <label>Bathroom</label>
+        <input type="text" name="bathroom">
+        <label>Balcony</label>
+        <input type="text" name="balcony">
+        <input type="submit" value="Predict">
+    </form>
+    
+    {% if result %}
+        <h3>{{ result }}</h3>
+    {% endif %}
+
+</body>
+</html>
